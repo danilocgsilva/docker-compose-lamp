@@ -4,3 +4,4 @@
 /data/*
 /logs/*
 .DS_Store
+/www/wp-config.php
