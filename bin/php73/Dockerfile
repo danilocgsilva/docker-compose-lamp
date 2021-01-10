@@ -21,10 +21,6 @@ RUN apt-get -y update && \
     rm -rf /var/lib/apt/lists/* && \
     curl -sS https://getcomposer.org/installer | php -- --install-dir=/usr/local/bin --filename=composer
 
-# Install xdebug
-RUN pecl install xdebug-2.7.2 && \
-    docker-php-ext-enable xdebug
-
 # Install redis
 RUN pecl install redis-5.0.2 && \
     docker-php-ext-enable redis

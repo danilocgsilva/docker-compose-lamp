@@ -39,9 +39,6 @@ RUN docker-php-ext-install curl \
 RUN docker-php-ext-configure gd --with-freetype-dir=/usr/include/ --with-jpeg-dir=/usr/include/ \
     && docker-php-ext-install gd 
 
-RUN pecl install xdebug-2.4.0RC4 && docker-php-ext-enable xdebug \
-    && echo "xdebug.remote_enable=1" >> /usr/local/etc/php/php.ini
-
 # Enable apache modules
 RUN a2enmod rewrite headers
 
