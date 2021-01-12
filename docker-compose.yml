@@ -30,8 +30,8 @@ services:
       - ${MYSQL_LOG_DIR-./logs/mysql}:/var/log/mysql
     environment:
       MYSQL_ROOT_PASSWORD: ${MYSQL_ROOT_PASSWORD}
-      MYSQL_DATABASE: ${MYSQL_DATABASE}
-      MYSQL_USER: ${MYSQL_USER}
+      MYSQL_DATABASE: ${COMPOSE_PROJECT_NAME}-wordpress
+      MYSQL_USER: ${COMPOSE_PROJECT_NAME}-user
       MYSQL_PASSWORD: ${MYSQL_PASSWORD}
   phpmyadmin:
     image: phpmyadmin/phpmyadmin
@@ -44,7 +44,7 @@ services:
       PMA_USER: ${MYSQL_USER}
       PMA_PASSWORD: ${MYSQL_PASSWORD}
       MYSQL_ROOT_PASSWORD: ${MYSQL_ROOT_PASSWORD}
-      MYSQL_USER: ${MYSQL_USER}
+      MYSQL_USER: ${COMPOSE_PROJECT_NAME}-user
       MYSQL_PASSWORD: ${MYSQL_PASSWORD}
     ports:
       - '${HOST_MACHINE_PMA_PORT}:80'
