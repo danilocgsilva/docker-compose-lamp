@@ -15,7 +15,7 @@ A Docker stack ready to easily run the best ever CMS!
 * Run the `docker-compose up -d`.
 
 ```shell
-git clone https://github.com/sprintcube/docker-compose-lamp.git
+git clone https://github.com/danilocgsilva/docker-php74-mysql-phpmyadmin-wp.git
 cd docker-compose-lamp/
 cp sample.env .env
 // modify sample.env as needed
